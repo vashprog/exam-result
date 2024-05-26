@@ -1,0 +1,86 @@
+.card {
+    /* Other styles remain unchanged */
+    width: 90%; /* Make the cards larger */
+    max-width: 400px; /* Set a maximum width for responsiveness */
+    margin: 20px auto; /* Add distance between the cards */
+}
+
+.card-content {
+    /* Other styles remain unchanged */
+    opacity: 0; /* Initially hide the content */
+    animation: fadeIn 1s ease forwards; /* Add fade-in animation */
+}
+
+.card:hover .card-content {
+    opacity: 1; /* Show content on hover */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.card-title {
+    /* Updated styles */
+    font-weight: bold; /* Make heading text bold */
+    color: transparent;
+    overflow: visible;
+    white-space: nowrap;
+    animation: typing 10s steps(20, end) forwards, reveal 1s ease forwards; /* Make typing animation very slow */
+}
+
+.card-subtitle, .card-text {
+    /* Other styles remain unchanged */
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes reveal {
+    from {
+        color: transparent;
+    }
+    to {
+        color: rgb(218, 227, 221);
+    }
+}
+
+
+
+
+.card-image img {
+    /* Updated styles */
+    width: 500px;
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover;
+}
+
+/* Card.css */
+
+.see-more-button {
+    padding: 10px 20px;
+    background-color: #007BFF; /* Blue color */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.see-more-button:hover {
+    background-color: #0056b3; /* Darker shade of blue on hover */
+}
+
+.card-subtitle{
+    color: rgb(102, 46, 46);
+}

@@ -1,0 +1,73 @@
+/* Result.css */
+
+/* Styling for main container */
+.main-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #000; /* Black background color */
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* Styling for result container */
+.container-result {
+  width: 90%; /* Adjust width to 90% of the viewport width */
+  max-width: 600px; /* Set maximum width for larger screens */
+  height: auto; /* Adjust height automatically based on content */
+  background-color: rgb(234, 225, 225); /* Light grey background */
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(195, 193, 193, 0.863); /* 3D box shadow */
+  padding: 20px;
+  opacity: 0; /* Initially hidden */
+  animation: fadeIn 1s forwards; /* Fade-in animation */
+  margin: 20px auto; /* Center the container horizontally */
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(-20px); /* Move up slightly while fading in */
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Styling for paragraphs */
+.container-result p {
+  color: rgb(101, 98, 98); /* Dark grey text color */
+  margin-bottom: 10px; /* Add space between paragraphs */
+}
+
+/* Styling for headings */
+.container-result h1 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #d78998; /* Blue heading color */
+  margin-bottom: 20px;
+}
+
+/* Styling for unordered list */
+.container-result ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+/* Styling for list items */
+.container-result ul li {
+  margin-bottom: 8px;
+  color: rgb(101, 98, 98); /* Light grey text color for list items */
+  margin-left: 20px; /* Indent list items */
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+  .container-result {
+      width: 90%; /* Adjust width to 90% of the viewport width */
+      max-width: 90%; /* Set maximum width for smaller screens */
+  }
+}
