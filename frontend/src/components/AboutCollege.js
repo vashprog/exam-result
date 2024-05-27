@@ -10,7 +10,7 @@ const AboutCollege = () => {
             <h2>About Our College</h2>
             <img src={aboutCollegeImage} alt="About College" className="about-college-image" />
             <div className="about-college-content">
-                <p>A beacon of innovation and academic excellence offering various disciplines of engineering.</p>
+                <p>A beacon of innovation and academic excellence.</p>
             </div>
         </div>
         </div>

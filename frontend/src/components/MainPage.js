@@ -1,5 +1,4 @@
-import React from 'react';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Card from './Card';
 import './MainPage.css';
@@ -10,6 +9,10 @@ const MainPage = () => {
     const [enrollmentNumber, setEnrollmentNumber] = useState('');
     const navigate = useNavigate();
 
+    const handleDepartmentNavigation = (departmentName) => {
+        navigate(`/department/${departmentName}`);
+    };
+
     const handleResultPageNavigation = () => {
         if (enrollmentNumber.trim() !== '') {
             navigate(`/result/${enrollmentNumber}`);
@@ -17,10 +20,9 @@ const MainPage = () => {
     };
 
     const handleAboutCollegeNavigation = () => {
-        // Navigate to the About College page
         navigate('/about-college');
     };
-    
+
     return (
         <div className="main-page">
             <Card
@@ -29,7 +31,9 @@ const MainPage = () => {
                 content="Discover more about our college, faculty, and the courses we offer."
                 imageUrl={collegeDetailsImage}
             >
-                <button onClick={handleAboutCollegeNavigation} className="see-more-button">See More</button>
+                <button onClick={handleAboutCollegeNavigation} className="see-more-button">
+                    See More
+                </button>
             </Card>
             <Card
                 title="Check Your Results"
@@ -51,9 +55,19 @@ const MainPage = () => {
                     </button>
                 </div>
             </Card>
+            <Card title="Explore Departments">
+                {['CSE', 'ECE', 'EEE', 'ME', 'CE'].map((department) => (
+                    <button
+                        key={department}
+                        onClick={() => handleDepartmentNavigation(department)}
+                        className="department-button"
+                    >
+                        View {department} Department Details
+                    </button>
+                ))}
+            </Card>
         </div>
     );
-    
 };
 
 export default MainPage;

@@ -1,10 +1,8 @@
 const express = require("express");
 const connectDB = require("./db");
 const studentMarksRoutes = require("./routes/studentMark");
-const studentRoutes = require("./routes/all");
 const topStudentsRoutes = require("./routes/topper");
-const studentController = require("./routes/studentinadept");
-const averageMark = require("./routes/average");
+const averageMarkRoutes = require("./routes/average");
 const cors = require('cors'); // Import CORS
 
 const app = express();
@@ -19,10 +17,8 @@ app.use(cors());
 
 // Routes
 app.use("/api", studentMarksRoutes);
-app.use("/api", studentRoutes);
 app.use("/api", topStudentsRoutes);
-app.use("/api", studentController);
-app.use("/api", averageMark);
+app.use("/api", averageMarkRoutes);
 
 // Start the server
 app.listen(port, () => {

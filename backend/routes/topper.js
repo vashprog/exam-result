@@ -3,12 +3,10 @@ const router = express.Router();
 const Student = require("../models/studentModel");
 const Exam = require("../models/examModel");
 
-// Route to get top 10 toppers for a department by department name
 router.get("/toppers/:departmentName", async (req, res) => {
   try {
-    const departmentName = req.params.departmentName;
+    const { departmentName } = req.params;
 
-    // Aggregate query to calculate total marks for each student in the department
     const topToppers = await Exam.aggregate([
       {
         $lookup: {
@@ -22,9 +20,7 @@ router.get("/toppers/:departmentName", async (req, res) => {
         $unwind: "$student",
       },
       {
-        $match: {
-          "student.department": departmentName, // Filter by department name
-        },
+        $match: { "student.department": departmentName },
       },
       {
         $group: {
@@ -32,25 +28,20 @@ router.get("/toppers/:departmentName", async (req, res) => {
           totalMarks: { $sum: "$marks" },
         },
       },
-      { $sort: { totalMarks: -1 } }, // Sort by total marks in descending order
-      { $limit: 10 }, // Limit to top 10 students
+      { $sort: { totalMarks: -1 } },
+      { $limit: 10 },
     ]);
 
-    // Populate student details for each top topper
     const topToppersWithDetails = await Promise.all(
       topToppers.map(async (topper) => {
         const studentDetails = await Student.findOne({
           enrollmentNumber: topper._id,
         });
-        return {
-          student: studentDetails,
-          totalMarks: topper.totalMarks,
-        };
+        return { student: studentDetails, totalMarks: topper.totalMarks };
       })
     );
 
-    // Return the list of top toppers for the department
-    res.json(topToppersWithDetails);
+    res.json({ averageMarks: 0, topToppers: topToppersWithDetails }); // Ensure consistent response structure
   } catch (error) {
     console.error("Error retrieving top toppers:", error);
     res.status(500).json({ error: "Internal server error" });

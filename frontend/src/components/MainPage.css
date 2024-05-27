@@ -1,4 +1,3 @@
-/* src/components/MainPage.css */
 .main-page {
     display: flex;
     flex-direction: column;
@@ -10,7 +9,6 @@
 }
 
 .enrollment-input-container {
-    /* Updated styles */
     display: flex;
     flex-direction: column;
     align-items: flex-start; /* Align items to the start (left) */
@@ -18,7 +16,6 @@
 }
 
 .enrollment-input {
-    /* Updated styles */
     padding: 8px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
@@ -28,7 +25,6 @@
 }
 
 .enrollment-button {
-    /* Updated styles */
     padding: 8px 16px;
     border: none;
     border-radius: 4px;
@@ -39,7 +35,10 @@
     align-self: flex-start; /* Align button to the start (left) */
 }
 
-
 .enrollment-button:hover {
     background-color: #0056b3;
+}
+
+.department-button {
+    color: aliceblue;
 }

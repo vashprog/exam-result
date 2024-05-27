@@ -1,0 +1,25 @@
+/* DepartmentDetails.css */
+.department-details {
+    padding: 20px;
+  }
+  
+  .department-details h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+  }
+  
+  .department-details h2 {
+    font-size: 1.5em;
+    margin: 10px 0;
+  }
+  
+  .department-details ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .department-details li {
+    font-size: 1.2em;
+    margin: 5px 0;
+  }
+  

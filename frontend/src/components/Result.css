@@ -1,6 +1,5 @@
 /* Result.css */
 
-/* Styling for main container */
 .main-page {
   display: flex;
   flex-direction: column;
@@ -11,10 +10,8 @@
   width: 100%;
 }
 
-/* Styling for result container */
 .container-result {
-  width: 90%; /* Adjust width to 90% of the viewport width */
-  max-width: 600px; /* Set maximum width for larger screens */
+  width: 500px;
   height: auto; /* Adjust height automatically based on content */
   background-color: rgb(234, 225, 225); /* Light grey background */
   border-radius: 8px;
@@ -25,25 +22,22 @@
   margin: 20px auto; /* Center the container horizontally */
 }
 
-/* Fade-in animation */
 @keyframes fadeIn {
   from {
-      opacity: 0;
-      transform: translateY(-20px); /* Move up slightly while fading in */
+    opacity: 0;
+    transform: translateY(-20px); /* Move up slightly while fading in */
   }
   to {
-      opacity: 1;
-      transform: translateY(0);
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-/* Styling for paragraphs */
 .container-result p {
   color: rgb(101, 98, 98); /* Dark grey text color */
   margin-bottom: 10px; /* Add space between paragraphs */
 }
 
-/* Styling for headings */
 .container-result h1 {
   font-size: 24px;
   font-weight: bold;
@@ -51,17 +45,33 @@
   margin-bottom: 20px;
 }
 
-/* Styling for unordered list */
 .container-result ul {
   list-style: none;
   padding-left: 0;
 }
 
-/* Styling for list items */
 .container-result ul li {
   margin-bottom: 8px;
   color: rgb(101, 98, 98); /* Light grey text color for list items */
   margin-left: 20px; /* Indent list items */
+}
+
+.download-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.download-button:hover {
+  background-color: #0056b3;
 }
 
 /* Media query for responsiveness */

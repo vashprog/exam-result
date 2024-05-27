@@ -1,4 +1,3 @@
-// src/components/Card.js
 import React from 'react';
 import './Card.css';
 
@@ -15,6 +14,5 @@ const Card = ({ title, subtitle, content, imageUrl, onClick, children }) => (
         </div>
     </div>
 );
-
 
 export default Card;

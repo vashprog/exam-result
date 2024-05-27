@@ -15,9 +15,7 @@ router.get("/marks/:enrollmentNumber", async (req, res) => {
     }
 
     // Find all exams for the student
-    const exams = await Exam.find({
-      enrollmentNumber: student.enrollmentNumber,
-    });
+    const exams = await Exam.find({ enrollmentNumber: student.enrollmentNumber });
 
     let totalMarks = 0;
     exams.forEach((exam) => {
@@ -25,8 +23,14 @@ router.get("/marks/:enrollmentNumber", async (req, res) => {
     });
     const totalExams = exams.length;
     const percentage = ((totalMarks / (totalExams * 100)) * 100).toFixed(2);
-    // Return the list of exams in the response
-    res.json({ exams, totalMarks, percentage });
+
+    // Return the list of exams, total marks, percentage, and student name in the response
+    res.json({
+      studentName: student.name,
+      exams,
+      totalMarks,
+      percentage,
+    });
   } catch (error) {
     console.error("Error retrieving exams:", error);
     res.status(500).json({ error: "Internal server error" });

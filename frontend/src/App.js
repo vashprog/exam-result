@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import Result from './components/Result';
 import MainPage from './components/MainPage';
 import AboutCollege from './components/AboutCollege';
+import DepartmentDetails from './components/DepartmentDetails';
 import './App.css';
 
 function App() {
@@ -18,9 +19,10 @@ function App() {
           </div>
         </nav>
         <Routes>
-          <Route path="/" element={<MainPage />} />     
+          <Route path="/" element={<MainPage />} />
           <Route path="/about-college" element={<AboutCollege />} />
           <Route path="/result/:enrollmentNumber" element={<Result />} />
+          <Route path="/department/:departmentName" element={<DepartmentDetails />} />
         </Routes>
       </div>
     </Router>
