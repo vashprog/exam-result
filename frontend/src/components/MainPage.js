@@ -9,9 +9,6 @@ const MainPage = () => {
     const [enrollmentNumber, setEnrollmentNumber] = useState('');
     const navigate = useNavigate();
 
-    const handleDepartmentNavigation = (departmentName) => {
-        navigate(`/department/${departmentName}`);
-    };
 
     const handleResultPageNavigation = () => {
         if (enrollmentNumber.trim() !== '') {
@@ -54,17 +51,6 @@ const MainPage = () => {
                         Go to Results
                     </button>
                 </div>
-            </Card>
-            <Card title="Explore Departments">
-                {['CSE', 'ECE', 'EEE', 'ME', 'CE'].map((department) => (
-                    <button
-                        key={department}
-                        onClick={() => handleDepartmentNavigation(department)}
-                        className="department-button"
-                    >
-                        View {department} Department Details
-                    </button>
-                ))}
             </Card>
         </div>
     );
