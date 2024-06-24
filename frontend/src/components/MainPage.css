@@ -3,7 +3,7 @@
     flex-direction: column;
     align-items: center;
     padding: 20px;
-    background-color: #000; /* Black background color */
+    background-color: #fff;
     min-height: 100vh;
     width: 100%;
 }
@@ -11,8 +11,9 @@
 .enrollment-input-container {
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Align items to the start (left) */
+    align-items: flex-start; 
     margin-top: 10px;
+    width: 100%; 
 }
 
 .enrollment-input {
@@ -20,8 +21,8 @@
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    width: 100%; /* Take up full width */
-    box-sizing: border-box; /* Include padding and border in width calculation */
+    width: 100%; 
+    box-sizing: border-box; 
 }
 
 .enrollment-button {
@@ -32,7 +33,7 @@
     color: #fff;
     cursor: pointer;
     transition: background-color 0.3s;
-    align-self: flex-start; /* Align button to the start (left) */
+    align-self: flex-start; 
 }
 
 .enrollment-button:hover {
@@ -40,5 +41,5 @@
 }
 
 .department-button {
-    color: aliceblue;
+    color: aliceblue;
 }

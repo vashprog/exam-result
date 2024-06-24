@@ -1,31 +1,38 @@
-/* Result.css */
-
 .main-page {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px;
-  background-color: #000; /* Black background color */
+  margin: 0;
+  background: url('./images/gray.png') no-repeat center center fixed;
+  background-size: cover; 
   min-height: 100vh;
   width: 100%;
 }
 
+
 .container-result {
-  width: 500px;
-  height: auto; /* Adjust height automatically based on content */
-  background-color: rgb(234, 225, 225); /* Light grey background */
-  border-radius: 8px;
-  box-shadow: 0 0 20px rgba(195, 193, 193, 0.863); /* 3D box shadow */
+  width: 100%;
+  max-width: 500px;
+  background-color: rgba(255, 255, 255, 0.9); 
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   padding: 20px;
-  opacity: 0; /* Initially hidden */
-  animation: fadeIn 1s forwards; /* Fade-in animation */
-  margin: 20px auto; /* Center the container horizontally */
+  margin: 20px auto; 
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  opacity: 0; 
+  animation: fadeIn 1s forwards; 
+}
+
+.container-result:hover {
+  transform: translateY(-10px); 
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); 
 }
 
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(-20px); /* Move up slightly while fading in */
+    transform: translateY(20px); 
   }
   to {
     opacity: 1;
@@ -34,15 +41,16 @@
 }
 
 .container-result p {
-  color: rgb(101, 98, 98); /* Dark grey text color */
-  margin-bottom: 10px; /* Add space between paragraphs */
+  color: #656262; 
+  margin-bottom: 10px; 
 }
 
 .container-result h1 {
   font-size: 24px;
   font-weight: bold;
-  color: #d78998; /* Blue heading color */
+  color: #d78998;
   margin-bottom: 20px;
+  text-align: center; 
 }
 
 .container-result ul {
@@ -52,9 +60,10 @@
 
 .container-result ul li {
   margin-bottom: 8px;
-  color: rgb(101, 98, 98); /* Light grey text color for list items */
-  margin-left: 20px; /* Indent list items */
+  margin-left: 20px; 
+  color: #656262;
 }
+
 
 .download-button {
   display: inline-block;
@@ -67,17 +76,18 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .download-button:hover {
   background-color: #0056b3;
+  transform: translateY(-2px); 
 }
 
-/* Media query for responsiveness */
+
 @media (max-width: 768px) {
   .container-result {
-      width: 90%; /* Adjust width to 90% of the viewport width */
-      max-width: 90%; /* Set maximum width for smaller screens */
+    width: 90%; 
+    max-width: 90%;
   }
 }

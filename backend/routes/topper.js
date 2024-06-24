@@ -29,7 +29,7 @@ router.get("/toppers/:departmentName", async (req, res) => {
         },
       },
       { $sort: { totalMarks: -1 } },
-      { $limit: 10 },
+      { $limit: 3},
     ]);
 
     const topToppersWithDetails = await Promise.all(
@@ -41,7 +41,7 @@ router.get("/toppers/:departmentName", async (req, res) => {
       })
     );
 
-    res.json({ averageMarks: 0, topToppers: topToppersWithDetails }); // Ensure consistent response structure
+    res.json({ averageMarks: 0, topToppers: topToppersWithDetails }); 
   } catch (error) {
     console.error("Error retrieving top toppers:", error);
     res.status(500).json({ error: "Internal server error" });

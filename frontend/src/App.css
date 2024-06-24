@@ -89,17 +89,17 @@ nav .container .relative {
 nav .container .absolute {
   position: absolute;
   left: 0;
-  display: none; /* Initially hide the dropdown */
+  display: none; 
 }
 
 nav .container:hover .absolute {
-  display: block; /* Show the dropdown on hover */
+  display: block; 
 }
 
 nav .container .dropdown-menu {
-  background-color: #003366; /* Dark blue background */
+  background-color: #003366; 
   border-radius: 5px;
-  z-index: 10; /* Ensure it appears above other content */
+  z-index: 10; 
 }
 
 nav .container .dropdown-menu a {
@@ -110,15 +110,15 @@ nav .container .dropdown-menu a {
 }
 
 nav .container .dropdown-menu a:hover {
-  background-color: #001f4d; /* Darker blue on hover */
+  background-color: #001f4d; 
 }
 
-/* Styles for the DepartmentDetails component */
+
 .department-details {
   position: relative;
   background-size: cover;
   background-position: center;
-  min-height: 100vh;
+  min-height: 90vh;
   color: white;
   display: flex;
   justify-content: center;
@@ -161,5 +161,5 @@ nav .container .dropdown-menu a:hover {
 
 .department-details li {
   font-size: 1.2em;
-  margin: 5px 0;
+  margin: 5px 0;
 }

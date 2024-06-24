@@ -63,15 +63,15 @@ function Result() {
 
   return (
     <div className="main-page">
-      <div className="container-result mx-auto p-4">
-        <h1 className="text-xl font-bold mb-4">Result</h1>
+      <div className="container-result">
+        <h1>Result</h1>
         {result ? (
           <div>
             <p>Student Name: {result.studentName}</p>
             <p>Enrollment No: {enrollmentNumber}</p>
             <p>Total Marks: {result.totalMarks}</p>
             <p>Percentage: {result.percentage}%</p>
-            <h1 className="text-xl font-bold mb-4">Exams:</h1>
+            <h1>Exams:</h1>
             <ul>
               {result.exams.map((exam, index) => (
                 <li key={index}>

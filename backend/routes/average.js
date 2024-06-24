@@ -36,7 +36,7 @@ router.get("/averageMarks/:departmentName", async (req, res) => {
     ]);
 
     const averageMarks = averageMarksAggregate[0]?.averageMarks || 0;
-    res.json({ averageMarks, topToppers: [] }); // Ensure consistent response structure
+    res.json({ averageMarks, topToppers: [] }); 
   } catch (error) {
     console.error("Error retrieving average marks:", error);
     res.status(500).json({ error: "Internal server error" });

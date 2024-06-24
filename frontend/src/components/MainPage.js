@@ -2,17 +2,18 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Card from './Card';
 import './MainPage.css';
-import collegeDetailsImage from '../components/images/college.jpeg';
-import resultImage from '../components/images/result.jpeg';
+import collegeDetailsImage from '../components/images/hat.jpg';
+import resultImage from '../components/images/book_stack.jpg';
 
 const MainPage = () => {
     const [enrollmentNumber, setEnrollmentNumber] = useState('');
     const navigate = useNavigate();
 
-
     const handleResultPageNavigation = () => {
         if (enrollmentNumber.trim() !== '') {
             navigate(`/result/${enrollmentNumber}`);
+        } else {
+            alert('Please enter a valid enrollment number.');
         }
     };
 
@@ -25,7 +26,6 @@ const MainPage = () => {
             <Card
                 title="Learn More About Our College"
                 subtitle="College Details"
-                content="Discover more about our college, faculty, and the courses we offer."
                 imageUrl={collegeDetailsImage}
             >
                 <button onClick={handleAboutCollegeNavigation} className="see-more-button">
@@ -35,9 +35,7 @@ const MainPage = () => {
             <Card
                 title="Check Your Results"
                 subtitle="Student Results"
-                content=""
                 imageUrl={resultImage}
-                onClick={handleResultPageNavigation}
             >
                 <div className="enrollment-input-container">
                     <input

@@ -15,4 +15,4 @@ const Card = ({ title, subtitle, content, imageUrl, onClick, children }) => (
     </div>
 );
 
-export default Card;
+export default Card;

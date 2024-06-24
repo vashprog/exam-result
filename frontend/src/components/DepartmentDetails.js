@@ -40,7 +40,8 @@ const DepartmentDetails = () => {
     fetchDepartmentStats();
   }, [departmentName]);
 
-  const backgroundImage = departmentBackgrounds[departmentName] || require('../components/images/default.jpeg');
+  
+  const backgroundImage = departmentBackgrounds[departmentName] || require('../components/images/default.jpeg').default;
 
   if (loading) {
     return <div>Loading...</div>;
@@ -62,7 +63,7 @@ const DepartmentDetails = () => {
           <h3 className="subtitle">Average Marks: {departmentStats.averageMarks.toFixed(2)}</h3>
         </div>
         <div className="toppers-card">
-          <h3 className="subtitle">Top 10 Toppers</h3>
+          <h3 className="subtitle">Top 3 students</h3>
           <ul>
             {departmentStats.topToppers.map((topper, index) => (
               <li key={index}>
